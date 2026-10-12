@@ -17,9 +17,9 @@ function getPlayerChoice() {
 
 
 function playRound(playerChoice, computerChoice) {
-    if ((playerChoice == "Rock" && computerChoice=="Scissors") || (playerChoice == "Paper" && computerChoice=="Rock") || (playerChoice == "Scissors" && computerChoice=="Paper")) {
+    if ((playerChoice == "Rock" && computerChoice == "Scissors") || (playerChoice == "Paper" && computerChoice == "Rock") || (playerChoice == "Scissors" && computerChoice == "Paper")) {
         humanScore++;
-    } else if ((computerChoice == "Rock" && playerChoice=="Scissors") || (computerChoice == "Paper" && playerChoice=="Rock") || (computerChoice == "Scissors" && playerChoice=="Paper")) {
+    } else if ((computerChoice == "Rock" && playerChoice == "Scissors") || (computerChoice == "Paper" && playerChoice == "Rock") || (computerChoice == "Scissors" && playerChoice == "Paper")) {
         computerScore++;
     } else {
         humanScore++;
@@ -27,12 +27,24 @@ function playRound(playerChoice, computerChoice) {
     }
 }
 
-let computerChoice = getComputerChoice();
-let playerChoice = getPlayerChoice();
-playRound(computerChoice, playerChoice);
-console.log(computerChoice);
-console.log(playerChoice);
-console.log(humanScore);
-console.log(computerScore);
+
+for (let i = 0; i < 5; i++) {
+    let computerChoice = getComputerChoice();
+    let playerChoice = getPlayerChoice();
+    playRound(computerChoice, playerChoice);
+    console.log(computerChoice);
+    console.log(playerChoice);
+}
+
+console.log("Player: " + humanScore);
+console.log("Computer: " + computerScore);
+
+if (humanScore > computerScore) {
+    console.log("The Player wins!")
+} else if (computerScore > humanScore) {
+    console.log("The Computer wins!")
+} else {
+    console.log("Draw!")
+}
 
 
