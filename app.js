@@ -1,5 +1,5 @@
 
-const choices = ["Rock", "Paper", "Scissors"];
+const choices = ["rock", "paper", "scissors"];
 let humanScore = 0;
 let computerScore = 0;
 
@@ -17,9 +17,9 @@ function getPlayerChoice() {
 
 
 function playRound(playerChoice, computerChoice) {
-    if ((playerChoice == "Rock" && computerChoice == "Scissors") || (playerChoice == "Paper" && computerChoice == "Rock") || (playerChoice == "Scissors" && computerChoice == "Paper")) {
+    if ((playerChoice == "rock" && computerChoice == "scissors") || (playerChoice == "paper" && computerChoice == "rock") || (playerChoice == "scissors" && computerChoice == "paper")) {
         humanScore++;
-    } else if ((computerChoice == "Rock" && playerChoice == "Scissors") || (computerChoice == "Paper" && playerChoice == "Rock") || (computerChoice == "Scissors" && playerChoice == "Paper")) {
+    } else if ((computerChoice == "rock" && playerChoice == "scissors") || (computerChoice == "paper" && playerChoice == "rock") || (computerChoice == "scissors" && playerChoice == "paper")) {
         computerScore++;
     } else {
         humanScore++;
@@ -30,7 +30,7 @@ function playRound(playerChoice, computerChoice) {
 
 for (let i = 0; i < 5; i++) {
     let computerChoice = getComputerChoice();
-    let playerChoice = getPlayerChoice();
+    let playerChoice = getPlayerChoice().toLowerCase();
     playRound(computerChoice, playerChoice);
     console.log(computerChoice);
     console.log(playerChoice);
