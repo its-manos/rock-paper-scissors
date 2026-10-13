@@ -31,7 +31,7 @@ function playRound(playerChoice, computerChoice) {
 for (let i = 0; i < 5; i++) {
     let computerChoice = getComputerChoice();
     let playerChoice = getPlayerChoice().toLowerCase();
-    playRound(computerChoice, playerChoice);
+    playRound(playerChoice, computerChoice);
     console.log(computerChoice);
     console.log(playerChoice);
 }
